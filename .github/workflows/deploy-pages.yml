@@ -29,16 +29,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Copy assets to docs
+      - name: Copy logo to docs
         run: |
-          mkdir -p docs/assets
-          cp -r assets/* docs/assets/ 2>/dev/null || true
           cp logo.png docs/ 2>/dev/null || true
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        with:
-          enablement: true
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">FocusGuard</string>
+    <string name="app_name">MindShield</string>
+    <string name="accessibility_service_description">FocusGuard blocks access to short-form video content like YouTube Shorts, Instagram Reels, TikTok, Facebook Reels, and Snapchat Spotlight to help you stay focused.</string>
 </resources>

@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <!-- Gradient definitions -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6">
+        <animate attributeName="stop-color" values="#3b82f6;#6366f1;#3b82f6" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#10b981">
+        <animate attributeName="stop-color" values="#10b981;#34d399;#10b981" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0"/>
+    </linearGradient>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- Animated grid pattern -->
+  <g opacity="0.1">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#6366f1" stroke-width="0.5"/>
+    </pattern>
+    <rect width="1200" height="400" fill="url(#grid)">
+      <animate attributeName="opacity" values="0.05;0.15;0.05" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Floating particles -->
+  <g>
+    <circle cx="100" cy="100" r="2" fill="#3b82f6" opacity="0.6">
+      <animate attributeName="cy" values="100;80;100" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="300" r="1.5" fill="#10b981" opacity="0.5">
+      <animate attributeName="cy" values="300;280;300" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1000" cy="150" r="2" fill="#6366f1" opacity="0.7">
+      <animate attributeName="cy" values="150;130;150" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="250" r="1.5" fill="#34d399" opacity="0.5">
+      <animate attributeName="cy" values="250;230;250" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="350" r="1" fill="#818cf8" opacity="0.4">
+      <animate attributeName="cy" values="350;340;350" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1050" cy="80" r="1.5" fill="#3b82f6" opacity="0.5">
+      <animate attributeName="cy" values="80;65;80" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Shield with glow -->
+  <g transform="translate(180, 120)" filter="url(#glow)">
+    <!-- Outer glow ring -->
+    <circle cx="80" cy="80" r="95" fill="none" stroke="url(#glowGradient)" stroke-width="2" stroke-dasharray="15 8">
+      <animateTransform attributeName="transform" type="rotate" from="0 80 80" to="360 80 80" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Shield shape -->
+    <path d="M80 10 C80 10 140 22 160 40 C160 40 166 100 160 135 C154 170 120 192 80 205 C40 192 6 170 0 135 C-6 100 0 40 0 40 C20 22 80 10 80 10Z" 
+          fill="url(#shieldGradient)">
+      <animate attributeName="d" 
+               values="M80 10 C80 10 140 22 160 40 C160 40 166 100 160 135 C154 170 120 192 80 205 C40 192 6 170 0 135 C-6 100 0 40 0 40 C20 22 80 10 80 10Z;
+                       M80 8 C80 8 142 20 162 38 C162 38 168 100 162 137 C156 172 122 194 80 207 C38 194 4 172 -2 137 C-8 100 -2 38 -2 38 C18 20 80 8 80 8Z;
+                       M80 10 C80 10 140 22 160 40 C160 40 166 100 160 135 C154 170 120 192 80 205 C40 192 6 170 0 135 C-6 100 0 40 0 40 C20 22 80 10 80 10Z"
+               dur="4s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Inner shield highlight -->
+    <path d="M80 28 C80 28 128 38 145 52 C145 52 150 100 145 128 C140 156 115 174 80 185 C45 174 20 156 15 128 C10 100 15 52 15 52 C32 38 80 28 80 28Z" 
+          fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+    
+    <!-- Play/Block icon (X mark) -->
+    <g stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" filter="url(#softGlow)">
+      <line x1="55" y1="75" x2="105" y2="125">
+        <animate attributeName="stroke-opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="105" y1="75" x2="55" y2="125">
+        <animate attributeName="stroke-opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+  
+  <!-- Text content -->
+  <g transform="translate(420, 130)">
+    <!-- MindShield title -->
+    <text x="0" y="50" font-family="'Segoe UI', Arial, sans-serif" font-size="64" font-weight="bold" fill="#ffffff" filter="url(#softGlow)">
+      MindShield
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="95" font-family="'Segoe UI', Arial, sans-serif" font-size="24" fill="#94a3b8">
+      Focus Guard for Android
+    </text>
+    
+    <!-- Tagline with animated gradient -->
+    <text x="0" y="145" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#6366f1">
+      Block Short-Form Video Distractions • Protect Your Focus • Reclaim Your Time
+      <animate attributeName="fill" values="#6366f1;#10b981;#6366f1" dur="4s" repeatCount="indefinite"/>
+    </text>
+    
+    <!-- Feature badges -->
+    <g transform="translate(0, 170)">
+      <!-- YouTube badge -->
+      <rect x="0" y="0" width="130" height="32" rx="16" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+      <text x="65" y="21" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#f87171" text-anchor="middle">🎬 YouTube Shorts</text>
+      
+      <!-- Instagram badge -->
+      <rect x="140" y="0" width="130" height="32" rx="16" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+      <text x="205" y="21" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#e879f9" text-anchor="middle">📸 Instagram Reels</text>
+      
+      <!-- TikTok badge -->
+      <rect x="280" y="0" width="100" height="32" rx="16" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+      <text x="330" y="21" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#22d3ee" text-anchor="middle">🎵 TikTok</text>
+      
+      <!-- More badge -->
+      <rect x="390" y="0" width="80" height="32" rx="16" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+      <text x="430" y="21" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#a3e635" text-anchor="middle">+ More</text>
+    </g>
+  </g>
+  
+  <!-- Version badge -->
+  <g transform="translate(1050, 30)">
+    <rect x="0" y="0" width="100" height="28" rx="14" fill="#10b981" opacity="0.2"/>
+    <rect x="0" y="0" width="100" height="28" rx="14" fill="none" stroke="#10b981" stroke-width="1"/>
+    <text x="50" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle" font-weight="600">v1.0.0</text>
+  </g>
+  
+  <!-- Android badge -->
+  <g transform="translate(1050, 70)">
+    <rect x="0" y="0" width="100" height="28" rx="14" fill="#3b82f6" opacity="0.2"/>
+    <rect x="0" y="0" width="100" height="28" rx="14" fill="none" stroke="#3b82f6" stroke-width="1"/>
+    <text x="50" y="19" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#3b82f6" text-anchor="middle" font-weight="600">🤖 Android</text>
+  </g>
+  
+  <!-- Decorative bottom line -->
+  <rect x="0" y="395" width="1200" height="5" fill="url(#shieldGradient)">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+  </rect>
+</svg>

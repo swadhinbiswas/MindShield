@@ -1,0 +1,77 @@
+name: Build and Release APK
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Make gradlew executable
+        run: chmod +x android/gradlew
+        
+      - name: Build Release APK
+        run: |
+          cd android
+          ./gradlew assembleRelease
+          
+      - name: Rename APK
+        run: |
+          mv android/app/build/outputs/apk/release/app-release.apk android/app/build/outputs/apk/release/MindShield-${{ github.ref_name }}.apk
+          
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: android/app/build/outputs/apk/release/MindShield-${{ github.ref_name }}.apk
+          body: |
+            ## 🛡️ MindShield ${{ github.ref_name }}
+            
+            ### Features
+            - 🚫 **Smart Content Blocking** - Automatically blocks short-form videos
+            - 📱 **Supported Platforms:**
+              - YouTube Shorts
+              - Instagram Reels
+              - TikTok
+              - Facebook Reels
+              - Snapchat Spotlight
+              - YouTube ReVanced/Vanced
+            - 📊 **Statistics & Insights** - Track blocked distractions and time saved
+            - 💪 **Motivational Messages** - Random encouraging messages when content is blocked
+            - 🎨 **Beautiful Dark Theme** - Modern, clean interface
+            - ⚡ **Battery Efficient** - Optimized background service
+            - 🔒 **Privacy First** - No data collection, everything stays on device
+            
+            ### Installation
+            1. Download `MindShield-${{ github.ref_name }}.apk`
+            2. Install on your Android device
+            3. Grant Accessibility Service permission
+            4. Enable protection and stay focused!
+            
+            ### Requirements
+            - Android 7.0 (API 24) or higher
+            
+            ---
+            Made with ❤️ for a more focused world
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

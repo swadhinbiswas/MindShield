@@ -2,10 +2,15 @@
 
 <!-- Animated Banner -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/banner.svg">
-  <img alt="MindShield Banner" src="assets/banner.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/banner.svg">
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/banner.svg">
+  <img alt="MindShield Banner" src="docs/assets/banner.svg" width="100%">
 </picture>
+
+<br/>
+
+<!-- Logo -->
+<img src="logo.png" width="120" alt="MindShield Logo"/>
 
 <br/>
 
@@ -15,10 +20,10 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-[![GitHub stars](https://img.shields.io/github/stars/swadhin/MindShield?style=social)](https://github.com/swadhin/MindShield/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/swadhin/MindShield?style=social)](https://github.com/swadhin/MindShield/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/swadhin/MindShield)](https://github.com/swadhin/MindShield/issues)
-[![GitHub release](https://img.shields.io/github/v/release/swadhin/MindShield)](https://github.com/swadhin/MindShield/releases)
+[![GitHub stars](https://img.shields.io/github/stars/swadhinbiswas/MindShield?style=social)](https://github.com/swadhinbiswas/MindShield/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/swadhinbiswas/MindShield?style=social)](https://github.com/swadhinbiswas/MindShield/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/swadhinbiswas/MindShield)](https://github.com/swadhinbiswas/MindShield/issues)
+[![GitHub release](https://img.shields.io/github/v/release/swadhinbiswas/MindShield)](https://github.com/swadhinbiswas/MindShield/releases)
 
 <h3>🛡️ Take Back Control of Your Digital Life</h3>
 
@@ -27,10 +32,10 @@
   across major social media platforms, helping you stay focused and productive.
 </p>
 
-[📱 Download APK](https://github.com/swadhin/MindShield/releases/latest) •
-[🌐 Website](https://swadhin.github.io/MindShield) •
+[📱 Download APK](https://github.com/swadhinbiswas/MindShield/releases/latest) •
+[🌐 Website](https://swadhinbiswas.github.io/MindShield) •
 [📖 Documentation](#-documentation) •
-[🐛 Report Bug](https://github.com/swadhin/MindShield/issues)
+[🐛 Report Bug](https://github.com/swadhinbiswas/MindShield/issues)
 
 </div>
 
@@ -105,16 +110,24 @@ Short-form videos are designed to be **addictive**. Apps like YouTube Shorts, In
 <div align="center">
 <table>
 <tr>
-<td align="center"><strong>Home Screen</strong></td>
-<td align="center"><strong>Protection Active</strong></td>
-<td align="center"><strong>Blocking Screen</strong></td>
-<td align="center"><strong>Settings</strong></td>
+<td align="center"><strong>🏠 Home Screen</strong></td>
+<td align="center"><strong>✅ Protection Active</strong></td>
+<td align="center"><strong>🚫 Blocking Screen</strong></td>
 </tr>
 <tr>
-<td><img src="assets/screenshots/home.png" width="200"/></td>
-<td><img src="assets/screenshots/active.png" width="200"/></td>
-<td><img src="assets/screenshots/blocking.png" width="200"/></td>
-<td><img src="assets/screenshots/settings.png" width="200"/></td>
+<td><img src="docs/assets/home.png" width="220"/></td>
+<td><img src="docs/assets/Protectionactive.png" width="220"/></td>
+<td><img src="docs/assets/blockingscreen.png" width="220"/></td>
+</tr>
+<tr>
+<td align="center"><strong>⚙️ Settings</strong></td>
+<td align="center"><strong>📊 Statistics</strong></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><img src="docs/assets/settings.png" width="220"/></td>
+<td><img src="docs/assets/statics.png" width="220"/></td>
+<td></td>
 </tr>
 </table>
 </div>
@@ -125,7 +138,7 @@ Short-form videos are designed to be **addictive**. Apps like YouTube Shorts, In
 
 ### Download & Install
 
-1. **Download** the latest APK from [Releases](https://github.com/swadhin/MindShield/releases/latest)
+1. **Download** the latest APK from [Releases](https://github.com/swadhinbiswas/MindShield/releases/latest)
 2. **Install** the APK on your Android device
 3. **Grant** Accessibility Service permission when prompted
 4. **Enable** protection and start focusing!
@@ -134,7 +147,7 @@ Short-form videos are designed to be **addictive**. Apps like YouTube Shorts, In
 
 ```bash
 # Clone the repository
-git clone https://github.com/swadhin/MindShield.git
+git clone https://github.com/swadhinbiswas/MindShield.git
 cd MindShield/FocusGuard
 
 # Install dependencies
@@ -317,6 +330,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 <br/>
 
-[![Follow on GitHub](https://img.shields.io/github/followers/swadhin?label=Follow&style=social)](https://github.com/swadhin)
+[![Follow on GitHub](https://img.shields.io/github/followers/swadhinbiswas?label=Follow&style=social)](https://github.com/swadhinbiswas)
 
 </div>

@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'docs/**'
+      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -30,11 +31,14 @@ jobs:
         
       - name: Copy assets to docs
         run: |
-          cp -r assets docs/ 2>/dev/null || true
+          mkdir -p docs/assets
+          cp -r assets/* docs/assets/ 2>/dev/null || true
           cp logo.png docs/ 2>/dev/null || true
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          enablement: true
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

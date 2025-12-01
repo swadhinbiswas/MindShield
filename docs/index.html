@@ -10,23 +10,23 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://swadhin.github.io/MindShield/">
+    <meta property="og:url" content="https://swadhinbiswas.github.io/MindShield/">
     <meta property="og:title" content="MindShield - Block Short-Form Video Distractions">
     <meta property="og:description" content="Take back control of your digital life. Block YouTube Shorts, Instagram Reels, TikTok and more.">
-    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:image" content="assets/home.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://swadhin.github.io/MindShield/">
+    <meta property="twitter:url" content="https://swadhinbiswas.github.io/MindShield/">
     <meta property="twitter:title" content="MindShield - Block Short-Form Video Distractions">
     <meta property="twitter:description" content="Take back control of your digital life. Block YouTube Shorts, Instagram Reels, TikTok and more.">
-    <meta property="twitter:image" content="assets/og-image.png">
+    <meta property="twitter:image" content="assets/home.png">
 
     <title>MindShield - Block Short-Form Video Distractions | Focus Guard for Android</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" href="../logo.png">
+    <link rel="apple-touch-icon" href="../logo.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -425,6 +425,49 @@
             background: rgba(30, 41, 59, 0.3);
         }
 
+        /* Screenshots Section */
+        .screenshots {
+            padding: 6rem 2rem;
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .screenshots-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .screenshot-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+        }
+
+        .screenshot-card img {
+            width: 200px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .screenshot-card h4 {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
         .platforms-grid {
             max-width: 800px;
             margin: 0 auto;
@@ -703,14 +746,15 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="logo.png" alt="MindShield Logo">
+                <img src="../logo.png" alt="MindShield Logo">
                 MindShield
             </a>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
                 <li><a href="#platforms">Platforms</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="https://github.com/swadhin/MindShield">GitHub</a></li>
+                <li><a href="https://github.com/swadhinbiswas/MindShield">GitHub</a></li>
             </ul>
             <a href="#download" class="nav-cta">Download APK</a>
         </div>
@@ -731,7 +775,7 @@
                         </svg>
                         Download Now
                     </a>
-                    <a href="https://github.com/swadhin/MindShield" class="btn btn-secondary">
+                    <a href="https://github.com/swadhinbiswas/MindShield" class="btn btn-secondary">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
@@ -822,6 +866,36 @@
         </div>
     </section>
 
+    <!-- Screenshots Section -->
+    <section class="screenshots" id="screenshots">
+        <div class="section-header">
+            <h2>📸 App Screenshots</h2>
+            <p>See MindShield in action</p>
+        </div>
+        <div class="screenshots-grid">
+            <div class="screenshot-card">
+                <img src="assets/home.png" alt="Home Screen">
+                <h4>🏠 Home Screen</h4>
+            </div>
+            <div class="screenshot-card">
+                <img src="assets/Protectionactive.png" alt="Protection Active">
+                <h4>✅ Protection Active</h4>
+            </div>
+            <div class="screenshot-card">
+                <img src="assets/blockingscreen.png" alt="Blocking Screen">
+                <h4>🚫 Blocking Screen</h4>
+            </div>
+            <div class="screenshot-card">
+                <img src="assets/settings.png" alt="Settings">
+                <h4>⚙️ Settings</h4>
+            </div>
+            <div class="screenshot-card">
+                <img src="assets/statics.png" alt="Statistics">
+                <h4>📊 Statistics</h4>
+            </div>
+        </div>
+    </section>
+
     <!-- Platforms Section -->
     <section class="platforms" id="platforms">
         <div class="section-header">
@@ -898,7 +972,7 @@
         <div class="download-content">
             <h2>Ready to Focus?</h2>
             <p>Download MindShield now and take the first step towards a more productive life.</p>
-            <a href="https://github.com/swadhin/MindShield/releases/latest" class="btn download-btn">
+            <a href="https://github.com/swadhinbiswas/MindShield/releases/latest" class="btn download-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                     <polyline points="7 10 12 15 17 10"/>
@@ -914,7 +988,7 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <img src="logo.png" alt="MindShield Logo">
+                    <img src="../logo.png" alt="MindShield Logo">
                     MindShield
                 </a>
                 <p>Take back control of your digital life. Block short-form video distractions and stay focused.</p>
@@ -930,9 +1004,9 @@
             <div class="footer-links">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="https://github.com/swadhin/MindShield">GitHub</a></li>
-                    <li><a href="https://github.com/swadhin/MindShield#-documentation">Documentation</a></li>
-                    <li><a href="https://github.com/swadhin/MindShield/issues">Report Bug</a></li>
+                    <li><a href="https://github.com/swadhinbiswas/MindShield">GitHub</a></li>
+                    <li><a href="https://github.com/swadhinbiswas/MindShield#-documentation">Documentation</a></li>
+                    <li><a href="https://github.com/swadhinbiswas/MindShield/issues">Report Bug</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -940,14 +1014,14 @@
                 <ul>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
-                    <li><a href="https://github.com/swadhin/MindShield/blob/main/LICENSE">MIT License</a></li>
+                    <li><a href="https://github.com/swadhinbiswas/MindShield/blob/main/LICENSE">MIT License</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>© 2024 MindShield. Made with ❤️ for a more focused world.</p>
             <div class="social-links">
-                <a href="https://github.com/swadhin/MindShield" aria-label="GitHub">
+                <a href="https://github.com/swadhinbiswas/MindShield" aria-label="GitHub">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>

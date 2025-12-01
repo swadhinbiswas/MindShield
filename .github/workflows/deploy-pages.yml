@@ -7,8 +7,10 @@ on:
     paths:
       - 'docs/**'
       - '.github/workflows/deploy-pages.yml'
+      - 'logo.png'
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN
 permissions:
   contents: read
   pages: write
@@ -19,28 +21,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Copy logo to docs
+      - name: Prepare site
         run: |
-          cp logo.png docs/ 2>/dev/null || true
+          mkdir -p _site
+          cp -r docs/* _site/
+          cp logo.png _site/ 2>/dev/null || true
           
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'docs'
-          
+          path: '_site'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

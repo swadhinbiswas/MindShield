@@ -9,10 +9,10 @@
 
 <br/>
 
-<!-- Logo -->
+<!-- Logo
 <img src="logo.png" width="120" alt="MindShield Logo"/>
 
-<br/>
+<br/> -->
 
 <!-- Badges -->
 [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://www.android.com/)
